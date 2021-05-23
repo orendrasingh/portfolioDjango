@@ -1,6 +1,7 @@
 from django.db import models
 import os
 import random
+from ckeditor.fields import RichTextField
 # Create your models here.
 def photo_path(instance, filename):
     basefilename, file_extension = os.path.splitext(filename)
@@ -38,7 +39,7 @@ class Experience(models.Model):
     logo = models.FileField(upload_to=photo_path, null=True)
 
     position=models.TextField(blank=True)
-    description=models.TextField(blank=True)
+    description=RichTextField()
     startDate=models.DateField(blank=True)
     endDate=models.DateField(blank=True,null=True)
     ispresent=models.BooleanField(default=False)
@@ -51,7 +52,7 @@ class Education(models.Model):
     logo = models.FileField(upload_to=photo_path, null=True)
 
     branch=models.TextField(blank=True)
-    description=models.TextField(blank=True)
+    description=RichTextField()
     startDate=models.DateField(blank=True)
     endDate=models.DateField(blank=True,null=True)
     ispresent=models.BooleanField(default=False)
@@ -65,7 +66,7 @@ class personalProjects(models.Model):
     link=models.URLField(blank=True)
     startDate=models.DateField(blank=True,null=True)
     endDate=models.DateField(blank=True,null=True)
-    description=models.TextField(blank=True)
+    description=RichTextField()
 
     def __str__(self):
         return self.name
@@ -83,7 +84,7 @@ class recentWork(models.Model):
     link=models.URLField(blank=True)
     startDate=models.DateField(blank=True,null=True)
     endDate=models.DateField(blank=True,null=True)
-    description=models.TextField(blank=True)
+    description=RichTextField()
 
     def __str__(self):
         return self.name
@@ -96,10 +97,12 @@ class Technology2(models.Model):
 
 class notification(models.Model):
     enabled=models.BooleanField(default=False)
+    msg=models.TextField(null=True)
+    btn=models.TextField(null=True)
 
 class testimonial(models.Model):
     enabled=models.BooleanField(default=False)
 
 class about(models.Model):
-    about=models.TextField(blank=True)
+    about=RichTextField()
     logo=models.FileField(upload_to=photo_path,null=True)
