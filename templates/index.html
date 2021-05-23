@@ -1,0 +1,699 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="icon" href="{% static 'images/logo.svg' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet"> 
+<script src="https://kit.fontawesome.com/6c93999fd1.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body data-swipe-threshold="100">
+  <div class="main-body">
+
+      {% if popup.enabled %}
+
+      <!-- popup -->
+<div class="notification-popup">
+   <div class="notification-inner">
+   <p> Updating Site kindly check back after 8pm 23 May 2021 </p>
+  <p>  Till that time you can lookup how it will lookup</p>
+      <p onclick="$('.notification-popup').css('display','none')" style="color: red;cursor: pointer;">Check Demo</p>
+
+   </div>
+</div>
+<!-- popupend -->
+      {% endif %}
+
+        <!-- navigation bar  starting -->
+    <nav>
+        <div class="nav-logo">
+            <img src="{% static 'images/logo.svg' %}">
+            <i class="fas fa-bars hamburger-menu" onclick="$('#nav-items-section').toggleClass('mobile-view');$('#nav-items-section').toggleClass('mobile-view-animation');"></i>
+        </div>
+        <div class="nav-items-section mobile-view" id="nav-items-section" >
+            <a href="#projectslink" class="nav-links">Projects</a>
+            <a href="#aboutlink" class="nav-links">About</a>
+            <a href="https://drive.google.com/file/d/1yXbN8ZbKxmspridARmewqxfpaDiUfJmx/view?usp=sharing" target="_blank" class="nav-links">Resume</a>
+            <a href="#experiencelink" class="nav-links">Experience</a>
+            <a href="#skilllink" class="nav-links">Skills</a>
+            <a class="nav-links" onclick="$('#contact-form').css('display','flex')">Contact</a>
+        </div>
+    </nav>
+    <!-- ending of nav bar -->
+<!-- starting of first section -->
+<section class="main-section">
+    <div class="main-section-inner-left">
+       <div class="main-section-inner-left-div">
+        <div class="main-section-heading-1">Hey! I am</div>
+        <div class="main-section-heading-2">Orendra Singh</div>
+        <div class="main-section-heading-3">Full Stack Developer</div>
+        <div class="main-section-desc">I love to develop amazing things with creativity and new ideas
+        so that they can be made perfect as per the requirements.</div>
+        <div class="main-section-cv-btn" onclick="window.open('https://drive.google.com/file/d/1yXbN8ZbKxmspridARmewqxfpaDiUfJmx/view?usp=sharing','_blank')">
+            DOWNLOAD CV <span><img src="{% static 'images/elements/file_download.svg' %}" ></span>
+        </div>
+       </div>
+    </div>
+    <div class="main-section-inner-right" id="main-image">
+        <img src="{% static 'images/elements/main_svg.svg' %}" alt="">
+    </div>
+</section>
+<!-- ending of first section -->
+
+<!-- section breaker starts -->
+<div class="spacing-3"></div>
+<div class="section-breaker">
+    <img src="{% static 'images/elements/wave.svg' %}" alt="section breaker">
+</div>
+<div class="spacing-7"></div>
+<!-- section breaker ends -->
+
+<!-- skills section starts -->
+
+<section class="skills" id="skilllink">
+     <!-- starting of styled heading -->
+     <div class="styled-heading">
+        <div class="styled-heading-upper">
+        <div class="styled-hypen"></div><span>10 + Skills</span>
+        </div>
+        <div class="styled-heading-down">
+           Skillset Portfolio
+        </div>
+    </div>
+    <div class="spacing-5"></div>
+    <div class="skills-section">
+<div class="skills-section-col">
+    <div class="skills-circle purple-gradient"></div>
+    <div class="chart-title purple-gradient">Key Skills</div>
+    <!-- <div class="chart" id="chart1"></div> -->
+    <div class="skills-set">
+        <li class="skills-name">Python, Django & Git<span class="skill-meter skill-expert"> 2+ yrs. Exp.</span></li>
+        <li class="skills-name">WordPress<span class="skill-meter skill-intermediate">1+ yrs. Exp.</span></li>
+        <li class="skills-name">HTML, CSS & JS<span class="skill-meter skill-expert">2+ yrs. Exp.</span></li>
+        <li class="skills-name">Mongo & Sql DB<span class="skill-meter skill-intermediate">Intermediate</span></li>
+        <li class="skills-name">React JS<span class="skill-meter skill-intermediate">Intermediate</span></li>
+        <li class="skills-name">PhP & Java<span class="skill-meter skill-beginner">Beginner</span></li>
+        <li class="skills-name">C and C++<span class="skill-meter skill-intermediate">Intermediate</span></li>
+<!-- 
+        <li class="skills-name">Python<span class="skill-meter skill-beginner">Beginner</span></li>
+        <li class="skills-name">Python<span class="skill-meter skill-expert">Expert</span></li> -->
+
+    </div>
+</div>
+<div class="skills-section-col">
+    <div class="skills-circle purple-gradient"></div>
+
+    <div class="chart-title purple-gradient">Extra Skills</div>
+
+    <!-- <div class="chart" id="chart2"></div> -->
+    <div class="skills-set">
+        <li class="skills-name">Magento<span class="skill-meter skill-beginner"> Beginner </span></li>
+        <li class="skills-name">Drupal<span class="skill-meter skill-beginner">Beginner</span></li>
+        <li class="skills-name">Hosting <span class="skill-meter skill-intermediate">Intermediate</span></li>
+        <li class="skills-name">SEO<span class="skill-meter skill-intermediate">1+ yrs. Exp.</span></li>
+        <li class="skills-name">Web Scraping<span class="skill-meter skill-intermediate">Intermediate</span></li>
+        <li class="skills-name">Team Work<span class="skill-meter skill-expert">Expert</span></li>
+        <li class="skills-name">Linux<span class="skill-meter skill-intermediate">Intermediate</span></li>
+    </div>
+</div>
+<div class="skills-section-col">
+    <div class="skills-circle purple-gradient"></div>
+
+    <div class="chart-title purple-gradient">Designing & Editing Skills</div>
+
+    <!-- <div class="chart" id="chart3"></div> -->
+    <div class="skills-set">
+        <li class="skills-name">Figma<span class="skill-meter skill-intermediate">Intermediate</span></li>
+        <li class="skills-name">Adobe XD<span class="skill-meter skill-intermediate">Intermediate</span></li>
+        <li class="skills-name">Photoshop<span class="skill-meter skill-intermediate">Intermediate</span></li>
+        <li class="skills-name">Illustrator<span class="skill-meter skill-beginner">Beginner</span></li>
+        <li class="skills-name">Filmora<span class="skill-meter skill-intermediate">Intermediate</span></li>
+        <li class="skills-name">Adobe Premier<span class="skill-meter skill-beginner">Beginner</span></li>
+
+    </div>
+</div>
+    </div>
+    <div class="spacing-5"></div>
+</section>
+
+  <!-- section breaker starts -->
+  <div class="spacing-4"></div>
+  <!-- <div class="section-breaker">
+      <img src="./images/elements/wave.svg" alt="section breaker">
+  </div>
+  <div class="spacing-7"></div> -->
+  <!-- section breaker ends -->
+<!-- skills section ends-->
+<section class="eduction-section" id="experiencelink">
+    <!-- starting of styled heading -->
+    <div class="styled-heading">
+        <div class="styled-heading-upper">
+        <div class="styled-hypen"></div><span>2 + Years of Experience</span>
+        </div>
+        <div class="styled-heading-down">
+            Experience & Education
+        </div>
+    </div>
+    <!-- endingof styled heading -->
+    <div class="spacing-3"></div>
+
+    <!-- starting of toggle -->
+    <div class="edu_exp-toggle">
+        <div class="toggle-experience active-toggle" id="experience-toggle" onclick="$(this).addClass('active-toggle'); $('#education-toggle-data').hide(); $('#experience-toggle-data').show();$('#education-toggle').removeClass('active-toggle');">Experience</div>
+        <div class="toggle-education" id="education-toggle" onclick="$(this).addClass('active-toggle'); $('#experience-toggle-data').hide(); $('#education-toggle-data').show();$('#experience-toggle').removeClass('active-toggle');">Education</div>
+    </div>
+
+    <!-- ending of toggle -->
+    <div class="spacing-7"></div>
+
+    <!-- starting of timeline -->
+
+  <div class="timeline" id="experience-toggle-data" style="display: block;">
+    <div class="timeline-inner">
+    {% for item in experience %}
+      <div class="timeline-row">
+        <div class="timeline-col-1">
+           {% if item.logo %}
+            <div class="timeline-col-1-logo"><div class="timeline-logo-img"><img src="{{ item.logo.url }}" alt=""></div></div>
+        {% endif %}
+
+            <div class="timeline-col-1-year">{{ item.startDate }} - {% if item.ispresent %}
+            Present
+            {% else %}
+                {{ item.endDate }}
+            {% endif %} </div>
+        </div>
+        <div class="timeline-col-2">
+            <div class="timline-circle-1"></div>
+        </div>
+        <div class="timeline-col-3">
+            <div class="timeline-col-3-heading">{{ item.company }}</div>
+            <div class="timeline-col-1-heading">{{ item.position}}</div>
+            <div class="timeline-col-3-desc">{{ item.description}}</div>
+        </div>
+       </div>
+    {% endfor %}
+
+    </div>
+  </div>
+  <div class="timeline" id="education-toggle-data" style="display: none;">
+    <div class="timeline-inner">
+       {% for item in education %}
+      <div class="timeline-row">
+        <div class="timeline-col-1">
+        {% if item.logo %}
+            <div class="timeline-col-1-logo"><div class="timeline-logo-img"><img src="{{ item.logo.url }}" alt=""></div></div>
+        {% endif %}
+
+            <div class="timeline-col-1-year">{{ item.startDate }} - {% if item.ispresent %}
+            Present
+            {% else %}
+                {{ item.endDate }}
+            {% endif %} </div>
+        </div>
+        <div class="timeline-col-2">
+            <div class="timline-circle-1"></div>
+        </div>
+        <div class="timeline-col-3">
+            <div class="timeline-col-3-heading">{{ item.branch }}</div>
+            <div class="timeline-col-1-heading">{{ item.college}}</div>
+            <div class="timeline-col-3-desc">{{ item.description}}</div>
+        </div>
+       </div>
+    {% endfor %}
+
+    </div>
+  </div>
+
+  <div class="spacing-5"></div>
+</section>
+
+  <!-- section breaker starts -->
+  <!-- <div class="spacing-4"></div> -->
+  <!-- <div class="section-breaker">
+      <img src="./images/elements/wave.svg" alt="section breaker">
+  </div>
+  <div class="spacing-7"></div> -->
+  <!-- section breaker ends -->
+
+  
+  <!-- section breaker starts -->
+  <div class="spacing-4"></div>
+  <!-- <div class="section-breaker">
+      <img src="./images/elements/wave.svg" alt="section breaker">
+  </div>
+  <div class="spacing-7"></div> -->
+  <!-- section breaker ends -->
+
+<!-- <section class="projects-portfolio">
+    <div class="styled-heading">
+        <div class="styled-heading-upper">
+        <div class="styled-hypen"></div><span>10 + Projects</span>
+        </div>
+        <div class="styled-heading-down">
+            Project Gallery
+        </div>
+    </div>
+    <div class="spacing-3"></div>
+    <div class="project-portfolio-type">Personal Projects</div>
+    <div class="project-portfolio-row">
+<div class="project-portfolio-col-1"></div>
+<div class="project-portfolio-col-1"></div>
+    </div>
+    <div class="project-portfolio-row">
+        <div class="project-portfolio-col-1"></div>
+        <div class="project-portfolio-col-1"></div>
+            </div>
+</section> -->
+
+
+<!-- earlier waala portfolio col -->
+<!-- <div class="portfolio-col" id="portfolio-col" style="background-image: url('./images/projects/ist.svg');">
+    <div class="portfolio-abs-content" id="portfolio-abs-content">
+        <div class="portfolio-read-btn purple-gradient" onclick="$('#portfolio-popup-1').css('display','flex')">
+            Read More
+        </div>
+    </div>
+</div> -->
+<!-- end earlier waala col -->
+
+  <section class="portfolio" id="projectslink">
+
+     <div class="styled-heading">
+        <div class="styled-heading-upper">
+        <div class="styled-hypen"></div><span>5 + Projects</span>
+        </div>
+        <div class="styled-heading-down">
+            Project Gallery
+        </div>
+    </div>
+    <div class="spacing-3"></div>
+    <div><span class="project-portfolio-type">Personal Projects</span><span class="view-all-btn-projects"> View all </span></div>
+
+
+    <div class="spacing-3"></div>
+    <div class="my-portfolio">
+        <div class="portfolio-inner" id="portfolio-inner">
+
+        {% for item in personalProject %}
+
+                <div class="portfolio-col portfolio-count-1">
+               <div class="portfolio-col-1"><div class="portfolio-project-img"><img src="{{ item.logo.url }}" alt=""></div></div>
+               <div class="portfolio-col-2">
+                <div class="portfolio-inner-col">
+                    <div class="portfolio-inner-row">
+                        <span class="portfolio-title" >Project Name  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-project-name" >{{ item.name}}</span>
+                    </div>
+                    <div class="portfolio-inner-row">
+                        <span class="portfolio-title" >Project Description </span> <span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-info" >{{ item.description }}</span>
+                    </div>
+                    <div class="portfolio-inner-row">
+                        <span class="portfolio-title" >Project Link  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc" ><a href="{{ item.link }}">{{ item.link }}</a></span>
+                    </div>                <div class="portfolio-inner-row">
+                        <span class="portfolio-title" >Technologies Used  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-tech" >
+
+  {% for tech in item.technologies.all %}
+ <span>   {{ tech.techName }}</span>
+  {% endfor %}</span>
+                    </div>
+                    <!-- <div class="portfolio-inner-row">
+                        <span class="portfolio-title" >Your role  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-role" >Developer</span>
+                    </div> -->
+                 </div>
+
+               </div>
+            </div>
+
+
+        {% endfor %}
+
+        </div>
+        <div class="portfolio-control-btn">
+            <img class="portfolio-control-left" src="{% static 'images/elements/arrow.svg' %}" onclick="prevSlide()" alt="LeftArrow">
+            <img class="portfolio-control-right" src="{% static '/images/elements/arrow.svg' %}" onclick="nextSlide()" alt="Right arrow">
+        </div>
+    </div>
+  <div class="spacing-5"></div>
+
+  <!-- section recent work  -->
+
+  <div class="spacing-3"></div>
+  <div><span class="project-portfolio-type">Recent On Work Projects</span><span class="view-all-btn-projects"> View all </span></div>
+
+
+  <div class="spacing-3"></div>
+  <div class="my-portfolio">
+      <div class="portfolio-inner" id="portfolio-inner2">
+
+        {% for item in recentWork %}
+          <div class="portfolio-col portfolio-count-2">
+             <div class="portfolio-col-1"><div class="portfolio-project-img"><img src="{{ item.logo.url }}" alt=""></div></div>
+             <div class="portfolio-col-2">
+              <div class="portfolio-inner-col">
+                  <div class="portfolio-inner-row">
+                      <span class="portfolio-title" >Project Name  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-project-name" >{{ item.name }}</span>
+                  </div>
+                  <div class="portfolio-inner-row">
+                      <span class="portfolio-title" >Project Description </span> <span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-info" >{{ item.description }}</span>
+                  </div>
+                  <div class="portfolio-inner-row">
+                      <span class="portfolio-title" >Project Link  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc" ><a href="{{ item.link}}">{{ item.link}}</a></span>
+                  </div>                <div class="portfolio-inner-row">
+                      <span class="portfolio-title" >Technologies Used  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-tech" >  {% for tech in item.technologies2.all %}
+ <span>   {{ tech.techName }}</span>
+  {% endfor %}</span>
+                  </div>
+                  <!-- <div class="portfolio-inner-row">
+                      <span class="portfolio-title" >Your role  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-role" >Developer</span>
+                  </div> -->
+               </div>
+
+             </div>
+          </div>
+        {% endfor %}
+
+
+        
+      </div>
+      <div class="portfolio-control-btn">
+          <img class="portfolio-control-left" src="{% static '/images/elements/arrow.svg' %}" onclick="prevSlide2()" alt="LeftArrow">
+          <img class="portfolio-control-right" src="{% static '/images/elements/arrow.svg' %}" onclick="nextSlide2()" alt="Right arrow">
+      </div>
+  </div>
+<div class="spacing-5"></div>
+
+  <!-- end of recent work -->
+
+<!-- <section class="portfolio-data">
+    <div class="portfolio-pop" id="portfolio-popup-1">
+        <div class="portfolio-popup-inner">
+            <div class="portfolio-popup-header purple-gradient">Project Description <div class="portfolio-close-btn" onclick="$('#portfolio-popup-1').css('display','none')">X</div></div>
+         <div class="portfolio-popup-inner-col">
+            <div class="portfolio-popup-inner-row">
+                <span class="portfolio-popup-title" >Project Name  </span><span class="portfolio-popup-colon" > : </span><span class="portfolio-popup-desc portfolio-project-name" >Internet Shutdowns</span>
+            </div>
+            <div class="portfolio-popup-inner-row">
+                <span class="portfolio-popup-title" >Project Description </span> <span class="portfolio-popup-colon" > : </span><span class="portfolio-popup-desc portfolio-info" >Internet Shutdowns is very nice project which tells users about the internet shutdonws happening all over the globe and in this project I have create backend frontend and all the components even the svg map with using svg images from scract</span>
+            </div>
+            <div class="portfolio-popup-inner-row">
+                <span class="portfolio-popup-title" >Project Link  </span><span class="portfolio-popup-colon" > : </span><span class="portfolio-popup-desc" ><a href="https://internetshutdowns.in">Internet shutdowns</a></span>
+            </div>
+            <div class="portfolio-popup-inner-row">
+                <span class="portfolio-popup-title" >Technologies Used  </span><span class="portfolio-popup-colon" > : </span><span class="portfolio-popup-desc portfolio-tech" ><span>Python</span><span>Java</span><span>C++</span></span>
+            </div>
+            <div class="portfolio-popup-inner-row">
+                <span class="portfolio-popup-title" >Your role  </span><span class="portfolio-popup-colon" > : </span><span class="portfolio-popup-desc portfolio-role" >Developer</span>
+            </div>
+         </div>
+
+        </div>
+    </div>
+</section> -->
+  </section>
+
+  <div class="spacing-4"></div>
+
+  <!-- starting of certification section -->
+
+  <section class="credentials">
+    <!-- starting of styled heading -->
+  <div class="styled-heading">
+      <div class="styled-heading-upper">
+      <div class="styled-hypen"></div><span>3 + Certificates</span>
+      </div>
+      <div class="styled-heading-down">
+          Certification & Achievements
+      </div>
+  </div>
+
+  <!-- endingof styled heading -->
+<div class="spacing-7"></div>
+  <!-- starting certificates section -->
+  <div class="certification-row">
+      <div class="certi-cols">
+          <img src="{% static '/images/certs/webtek.png' %}" onclick="window.open('https://drive.google.com/file/d/1a8LClT66wot-Dv9ExK57U6X3oEEb6ohY/view?usp=sharing','_blank')" alt="Web tek certificate">
+      </div>
+      <div class="certi-cols" onclick="window.open('https://drive.google.com/file/d/1IF1Pda1GXhSOnfXK66RSEux4wOAcs4pH/view','_blank')">
+          <img src="{% static '/images/certs/mons.png' %}" alt="Template Monster certificate">
+      </div>
+      <div class="certi-cols" onclick="window.open('https://drive.google.com/file/d/16LoCfo6PzlSCUw7CUAH_jmAnLolRAV7r/view?usp=sharing','_blank')">
+          <img src="{% static '/images/certs/FEA.jpg' %}"  alt="Fea Certificate">
+      </div>
+      <div class="certi-cols" onclick="window.open('https://www.credly.com/badges/4c4a44c2-6a67-4675-9e8d-22ed3584a2ad','_blank');">
+      <img src="{% static '/images/certs/vmware_Kn_ITA_CVC.png' %}">
+      </div>
+
+  </div>
+  <div class="spacing-5"></div>
+</section>
+
+  <!-- ending of certification section -->
+
+   <!-- section breaker starts -->
+   <div class="spacing-4"></div>
+   <!-- <div class="section-breaker">
+       <img src="./images/elements/wave.svg" alt="section breaker">
+   </div>
+   <div class="spacing-7"></div> -->
+   <!-- section breaker ends -->
+<section class="companies">
+     <!-- starting of styled heading -->
+     <div class="styled-heading">
+        <div class="styled-heading-upper">
+        <div class="styled-hypen"></div><span>3 + Companies</span>
+        </div>
+        <div class="styled-heading-down">
+           I worked in
+        </div>
+    </div>
+    <div class="spacing-5"></div>
+    <div class="companies-row">
+        <div class="company-cols" onclick="window.open('https://sflc.in','_blank')">
+            <img src="{% static '/images/company/sflc.svg' %}"  alt="Sflc.in">
+        </div>
+        <div class="company-cols" onclick="window.open('https://precisely.co.in','_blank')">
+            <img src="{% static '/images/company/precisely.svg' %}" alt="Precisely.in">
+        </div>
+        <div class="company-cols" onclick="window.open('https://lazyengineer.herokuapp.com','_blank')">
+            <img src="{% static '/images/company/le.svg' %}"  alt="Lazynegineer">
+        </div>
+        <div class="company-cols" onclick="window.open('https://maslow.precisely.one/','_blank');">
+        <img src="{% static '/images/company/maslow.svg' %}" alt="maslow">
+        </div>
+        <div class="company-cols" onclick="window.open('https://mmrboutique.in/','_blank');">
+            <img src="{% static '/images/company/mmr.png' %}" style="filter: invert();width: 60%;" alt="MMR Boutique">
+            </div>
+    </div>
+    <div class="spacing-5"></div>
+</section>
+
+{% if testimonial.enabled %}
+  <!-- section breaker starts -->
+  <div class="spacing-4"></div>
+  <!-- <div class="section-breaker">
+      <img src="./images/elements/wave.svg" alt="section breaker">
+  </div>
+  <div class="spacing-7"></div> -->
+  <!-- section breaker ends -->
+
+
+<!-- testimonial section  -->
+  <section class="testimonials">
+           <!-- starting of styled heading -->
+     <div class="styled-heading">
+        <div class="styled-heading-upper">
+        <div class="styled-hypen"></div><span>2 + Testimonials</span>
+        </div>
+        <div class="styled-heading-down">
+            Testimonials
+        </div>
+    </div>
+
+    <!-- endingof styled heading -->
+    <div class="spacing-7"></div>
+    <div class="testimonials-section" id="testimonials-section">
+        <div class="testimonial-col">
+            <div class="testimonial-row-1">
+                <div class="testimonial-row-1-1">
+                    <img src="./images/logo.svg" alt="profile-image">
+                </div>
+                <div class="testimonial-row-1-2">
+                    <p>harend Singh</p>
+                    <p>From Precisely</p>
+                </div>
+            </div>
+            <div class="testimonial-row-2">
+                <div class="testimonial-row-2-desc">This is testimonial description this is information about the person or the lovely comment from that person.</div>
+            </div>
+        </div>
+        <div class="testimonial-col">
+            <div class="testimonial-row-1">
+                <div class="testimonial-row-1-1">
+                    <img src="./images/logo.svg" alt="profile-image">
+                </div>
+                <div class="testimonial-row-1-2">
+                    <p>aish Singh</p>
+                    <p>From Precisely</p>
+                </div>
+            </div>
+            <div class="testimonial-row-2">
+                <div class="testimonial-row-2-desc">This is testimonial description this is information about the person or the lovely comment from that person.</div>
+            </div>
+        </div>
+        <div class="testimonial-col">
+            <div class="testimonial-row-1">
+                <div class="testimonial-row-1-1">
+                    <img src="./images/logo.svg" alt="profile-image">
+                </div>
+                <div class="testimonial-row-1-2">
+                    <p>raju Singh</p>
+                    <p>From Precisely</p>
+                </div>
+            </div>
+            <div class="testimonial-row-2">
+                <div class="testimonial-row-2-desc">This is testimonial description this is information about the person or the lovely comment from that person.</div>
+            </div>
+        </div>
+        <div class="testimonial-col">
+            <div class="testimonial-row-1">
+                <div class="testimonial-row-1-1">
+                    <img src="./images/logo.svg" alt="profile-image">
+                </div>
+                <div class="testimonial-row-1-2">
+                    <p>nikhil Singh</p>
+                    <p>From Precisely</p>
+                </div>
+            </div>
+            <div class="testimonial-row-2">
+                <div class="testimonial-row-2-desc">This is testimonial description this is information about the person or the lovely comment from that person.</div>
+            </div>
+        </div>
+        <div class="testimonial-col">
+            <div class="testimonial-row-1">
+                <div class="testimonial-row-1-1">
+                    <img src="./images/logo.svg" alt="profile-image">
+                </div>
+                <div class="testimonial-row-1-2">
+                    <p>Orendra Singh</p>
+                    <p>From Precisely</p>
+                </div>
+            </div>
+            <div class="testimonial-row-2">
+                <div class="testimonial-row-2-desc">This is testimonial description this is information about the person or the lovely comment from that person.</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="portfolio-control-btn">
+        <img class="portfolio-control-left" src="{% static '/images/elements/arrow.svg' %}" onclick="prevSlide1()" alt="LeftArrow">
+        <img class="portfolio-control-right" src="{% static '/images/elements/arrow.svg' %}" onclick="nextSlide1()" alt="Right arrow">
+    </div>
+    <div class="spacing-5"></div>
+  </section>
+{% endif %}
+
+    <!-- section breaker starts -->
+    <div class="spacing-4"></div>
+    <!-- <div class="section-breaker">
+        <img src="./images/elements/wave.svg" alt="section breaker">
+    </div>
+    <div class="spacing-7"></div> -->
+    <!-- section breaker ends -->
+  
+    <!-- about me section -->
+    <section class="about-me" id="aboutlink">
+            <!-- starting of styled heading -->
+     <div class="styled-heading">
+        <div class="styled-heading-upper">
+        <div class="styled-hypen"></div><span>About me</span>
+        </div>
+        <div class="styled-heading-down">
+            About me section
+        </div>
+    </div>
+<div class="spacing-5"></div>
+    <!-- endingof styled heading -->
+    <div class="about-section">
+        <div class="about-inner">
+            <div class="about-col-1"> 
+                <!-- <img src="./images/elements/three_colors.svg" alt="Profile image">  -->
+            <div class="about-profile-img" style="background-image: url('{{ about.logo.url }}');" ></div></div>
+            <div class="about-col-2"><p>{{ about.about }}</p>
+            <p>Email - id : <a href="mailto:orendrasing@gmail.com">orendrasingh@gmail.com</a>, <a href="mailto:contact@orendra.com">contact@orendra.com</a></p>
+            <p>Phone No. : <a href="tel:7503408348">7503408348</a></p>
+{#            <p>Telegram : orendrasingh </p>#}
+            <div class="contact-heading"><div class="contact-heading-txt purple-gradient" onclick="$('#contact-form').css('display','flex')">Contact Me <i class="fas fa-envelope"></i></div></div>
+
+            </div>
+        </div>
+    </div>
+    </section>
+<div class="spacing-2"></div>
+
+<section class="contact">
+    <!-- <div class="spacing-5"></div> -->
+    <div class="contact-form" id="contact-form">
+        <div class="contact-form-inner">
+            <div class="contact-form-col-1" style="background-image: url({% static '/images/contact3.jpg' %});"></div>
+            <div class="contact-form-col-2">
+                <div class="close-contact-form" onclick="$('#contact-form').css('display','none')">X</div>
+                <div class="contact-form-fields">
+                <label  class="contact-form-label">Name</label>
+                <input type="text" placeholder="Enter your name" class="contact-form-input">
+                <label class="contact-form-label">Email id</label>
+                <input type="email" placeholder="Enter your mail id" class="contact-form-input">
+
+                <label class="contact-form-label">Query</label>
+                <textarea type="text" class="contact-form-textarea"></textarea>
+                <button class="contact-form-btn purple-gradient">
+                    Submit
+                </button>
+            
+                </div>
+        </div>
+        </div>
+    </div>
+    <div class="spacing-5"></div>
+</section>
+<div class="gradient-line">
+
+</div>
+<div class="spacing-3"></div>
+
+<section class="social">
+    <div class="social-icons">
+        <a class="social-icon-items" target="_blank" href="https://www.facebook.com/orendra.singh/"><img src="{% static '/images/social_icon/fb.svg' %}" alt="fb icon"></a>
+        <a class="social-icon-items" target="_blank" href="http://instagram.com/orendrasingh"><img src="{% static '/images/social_icon/insta.svg' %}" alt="insta icon"></a>
+        <a class="social-icon-items" target="_blank" href="https://github.com/orendrasingh"><img src="{% static '/images/social_icon/github.svg' %}" alt="github icon"></a>
+        <a class="social-icon-items" target="_blank" href="https://www.linkedin.com/in/orendra-singh-b94bb0136/"><img src="{% static '/images/social_icon/linkedin.svg' %}" alt="linkedin icon"></a>
+        <a class="social-icon-items" target="_blank" href="https://twitter.com/orendrasingh"><img src="{% static '/images/social_icon/twitter.svg' %}" alt="twitter icon"></a>
+    </div>
+    <div class="spacing-3"></div>
+    <center><small>Designed & Developed by Orendra Singh</small></center>
+    <center><small><a href="#main-image">This</a> vector image is designed by <a href="http://www.freepik.com/" target="_blank">Freepik</a></small></center>
+
+    <div class="spacing-2"></div>
+</section>
+  <!-- main section ends here -->
+  </div>
+  <!-- <script src="./swiped-events.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/carousel1.js' %}"></script>
+  <script src="{% static 'js/carousel2.js' %}"></script>
+  <script src="{% static 'js/carousel3.js' %}"></script>
+
+
+
+</body>
+
+</html>
