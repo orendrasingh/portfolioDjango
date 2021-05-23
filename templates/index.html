@@ -23,9 +23,8 @@
       <!-- popup -->
 <div class="notification-popup">
    <div class="notification-inner">
-   <p> Updating Site kindly check back after 8pm 23 May 2021 </p>
-  <p>  Till that time you can lookup how it will lookup</p>
-      <p onclick="$('.notification-popup').css('display','none')" style="color: red;cursor: pointer;">Check Demo</p>
+   <p> {{ popup.msg }}</p>
+      <p onclick="$('.notification-popup').css('display','none')" style="color: red;margin-top:10px;cursor: pointer;">{{ popup.btn}}</p>
 
    </div>
 </div>
@@ -197,7 +196,7 @@
         <div class="timeline-col-3">
             <div class="timeline-col-3-heading">{{ item.company }}</div>
             <div class="timeline-col-1-heading">{{ item.position}}</div>
-            <div class="timeline-col-3-desc">{{ item.description}}</div>
+            <div class="timeline-col-3-desc">{{ item.description|safe}}</div>
         </div>
        </div>
     {% endfor %}
@@ -225,7 +224,7 @@
         <div class="timeline-col-3">
             <div class="timeline-col-3-heading">{{ item.branch }}</div>
             <div class="timeline-col-1-heading">{{ item.college}}</div>
-            <div class="timeline-col-3-desc">{{ item.description}}</div>
+            <div class="timeline-col-3-desc">{{ item.description|safe}}</div>
         </div>
        </div>
     {% endfor %}
@@ -313,7 +312,7 @@
                         <span class="portfolio-title" >Project Name  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-project-name" >{{ item.name}}</span>
                     </div>
                     <div class="portfolio-inner-row">
-                        <span class="portfolio-title" >Project Description </span> <span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-info" >{{ item.description }}</span>
+                        <span class="portfolio-title" >Project Description </span> <span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-info" >{{ item.description|safe }}</span>
                     </div>
                     <div class="portfolio-inner-row">
                         <span class="portfolio-title" >Project Link  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc" ><a href="{{ item.link }}">{{ item.link }}</a></span>
@@ -362,7 +361,7 @@
                       <span class="portfolio-title" >Project Name  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-project-name" >{{ item.name }}</span>
                   </div>
                   <div class="portfolio-inner-row">
-                      <span class="portfolio-title" >Project Description </span> <span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-info" >{{ item.description }}</span>
+                      <span class="portfolio-title" >Project Description </span> <span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-info" >{{ item.description|safe }}</span>
                   </div>
                   <div class="portfolio-inner-row">
                       <span class="portfolio-title" >Project Link  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc" ><a href="{{ item.link}}">{{ item.link}}</a></span>
@@ -626,7 +625,7 @@
             <div class="about-col-1"> 
                 <!-- <img src="./images/elements/three_colors.svg" alt="Profile image">  -->
             <div class="about-profile-img" style="background-image: url('{{ about.logo.url }}');" ></div></div>
-            <div class="about-col-2"><p>{{ about.about }}</p>
+            <div class="about-col-2"><p>{{ about.about|safe }}</p>
             <p>Email - id : <a href="mailto:orendrasing@gmail.com">orendrasingh@gmail.com</a>, <a href="mailto:contact@orendra.com">contact@orendra.com</a></p>
             <p>Phone No. : <a href="tel:7503408348">7503408348</a></p>
 {#            <p>Telegram : orendrasingh </p>#}
