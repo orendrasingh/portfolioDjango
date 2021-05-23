@@ -326,8 +326,8 @@ display: flex;
 }
 .notification-inner
 {
-    width: 80%;
-    height: 80vh;
+  width: 43%;
+    height: 38vh;
     margin: auto;
     text-align: center;
     display: flex;
