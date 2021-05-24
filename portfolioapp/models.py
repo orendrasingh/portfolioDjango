@@ -37,7 +37,7 @@ class DegSkills(models.Model):
 class Experience(models.Model):
     company=models.TextField(blank=True)
     logo = models.FileField(upload_to=photo_path, null=True)
-    shortDescription=RichTextField(max_length=175,  null=True)
+    shortDescription=RichTextField(max_length=250,  null=True)
     position=models.TextField(blank=True)
     description=RichTextField()
     startDate=models.DateField(blank=True)
@@ -50,7 +50,7 @@ class Experience(models.Model):
 class Education(models.Model):
     college=models.TextField(blank=True)
     logo = models.FileField(upload_to=photo_path, null=True)
-    shortDescription=RichTextField(max_length=175,  null=True)
+    shortDescription=RichTextField(max_length=250,  null=True)
     branch=models.TextField(blank=True)
     description=RichTextField()
     startDate=models.DateField(blank=True)
