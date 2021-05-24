@@ -326,16 +326,17 @@ display: flex;
 }
 .notification-inner
 {
-    width: 80%;
-    height: 80vh;
+  width: 43%;
+    height: 38vh;
     margin: auto;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background: rgb(255, 255, 255);
-    font-size: 25px;
+    font-size: 16px;
     border-radius: 10px;
+    padding: 20px;
     box-shadow: rgba(182, 182, 255, 0.329) 1px 2px 8px 2px;
 
 }
@@ -526,13 +527,24 @@ padding-bottom: 15px;
 
 .timeline-logo-img
 {
-    width: 50%;
-    height: 100%;
+    width: 65px;
+    height: 65px;
 }
 .timeline-logo-img img
 {
     max-width: 100%;
     max-height: 100%;
+}
+.hide-timeline-desc
+{
+    display: none;
+}
+.read-more-btn
+{
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+    color: var(--orange);
 }
 
 
@@ -619,20 +631,53 @@ padding-bottom: 15px;
 {
     width: 20%;
     display: flex;
+    /*background-image: url('./images/projects/precisely.svg');*/
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    z-index: -2;
+    border-radius: 10px;
 
-  
+}
+.portfolio-col-1::after
+{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    border-radius: 10px;
+    background: rgba(97, 97, 97, 0.507);
+    cursor: pointer;
+    z-index:2;
+
+}
+.portfolio-col-1:hover::after
+{
+    background: rgba(58, 58, 58, 0.185);
+transition: 0.5s;
+
+
 }
 .portfolio-col-2
 {
     width: 90%;
-    border-left: 1px solid var(--orange);
+    /* border-left: 1px solid var(--orange); */
 }
 .portfolio-project-img img
 {
     max-width: 100%;
     transform: rotate(90deg);
+   position: relative;
+   z-index: 3;
+}
+
+.portfolio-project-img img:hover
+{
+    transform: rotate(90deg) translateX(10px);
+    transition: ease-in-out 0.5s;
+
 }
 
 /* .portfolio-col:hover::after
@@ -691,9 +736,10 @@ padding-bottom: 15px;
     margin-left: 5px;
     margin-right: 5px;
     padding: 3px 15px;
-        margin-bottom: 10px;
+        margin-bottom: 7px;
     border-radius: 8px;
-
+     font-size: 10px;
+height: max-content;
     color: var(--alpha-white-9);
 }
 .portfolio-desc.portfolio-role
