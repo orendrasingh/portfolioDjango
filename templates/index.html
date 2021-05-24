@@ -197,7 +197,7 @@
             <div class="timeline-col-3-heading">{{ item.company }}</div>
             <div class="timeline-col-1-heading">{{ item.position}}</div>
             <div class="timeline-col-3-desc">{{ item.shortDescription|safe}}
-                <p class="timeline-col-3-desc hide-timeline-desc" id="timeline-toggle-{{ item.id }}">{{ item.description|safe }}</p>
+                <div class="timeline-col-3-desc hide-timeline-desc" id="timeline-toggle-{{ item.id }}">{{ item.description|safe }}</div>
             </div>
            {% if item.description %}
             <div class="read-more-btn" onclick="$('#timeline-toggle-{{ item.id }}').slideToggle(200)" id="read-more">Read more</div>
@@ -230,7 +230,7 @@
             <div class="timeline-col-3-heading">{{ item.branch }}</div>
             <div class="timeline-col-1-heading">{{ item.college}}</div>
                      <div class="timeline-col-3-desc">{{ item.shortDescription|safe}}
-                <p class="timeline-col-3-desc hide-timeline-desc" id="timeline-toggle-{{ item.id }}">{{ item.description|safe }}</p>
+                <div class="timeline-col-3-desc hide-timeline-desc" id="timeline-toggle-{{ item.id }}">{{ item.description|safe }}</div>
             </div>
             <div class="read-more-btn" onclick="$('#timeline-toggle-{{ item.id }}').slideToggle(200)" id="read-more">Read more</div>
         </div>
