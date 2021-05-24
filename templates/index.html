@@ -196,7 +196,12 @@
         <div class="timeline-col-3">
             <div class="timeline-col-3-heading">{{ item.company }}</div>
             <div class="timeline-col-1-heading">{{ item.position}}</div>
-            <div class="timeline-col-3-desc">{{ item.description|safe}}</div>
+            <div class="timeline-col-3-desc">{{ item.shortDescription|safe}}
+                <p class="timeline-col-3-desc hide-timeline-desc" id="timeline-toggle-{{ item.id }}">{{ item.description|safe }}</p>
+            </div>
+           {% if item.description %}
+            <div class="read-more-btn" onclick="$('#timeline-toggle-{{ item.id }}').slideToggle(200)" id="read-more">Read more</div>
+           {% endif %}
         </div>
        </div>
     {% endfor %}
@@ -224,7 +229,10 @@
         <div class="timeline-col-3">
             <div class="timeline-col-3-heading">{{ item.branch }}</div>
             <div class="timeline-col-1-heading">{{ item.college}}</div>
-            <div class="timeline-col-3-desc">{{ item.description|safe}}</div>
+                     <div class="timeline-col-3-desc">{{ item.shortDescription|safe}}
+                <p class="timeline-col-3-desc hide-timeline-desc" id="timeline-toggle-{{ item.id }}">{{ item.description|safe }}</p>
+            </div>
+            <div class="read-more-btn" onclick="$('#timeline-toggle-{{ item.id }}').slideToggle(200)" id="read-more">Read more</div>
         </div>
        </div>
     {% endfor %}
@@ -305,15 +313,24 @@
         {% for item in personalProject %}
 
                 <div class="portfolio-col portfolio-count-1">
-               <div class="portfolio-col-1"><div class="portfolio-project-img"><img src="{{ item.logo.url }}" alt=""></div></div>
+               <div class="portfolio-col-1" style="{% if item.backgroundImage %}
+             background-image: url('{{ item.backgroundImage.url }}');
+                 {% else %}
+             background:var(--orange)
+             {% endif %}"><div class="portfolio-project-img"><img src="{{ item.logo.url }}" alt=""></div></div>
                <div class="portfolio-col-2">
                 <div class="portfolio-inner-col">
                     <div class="portfolio-inner-row">
                         <span class="portfolio-title" >Project Name  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-project-name" >{{ item.name}}</span>
                     </div>
-                    <div class="portfolio-inner-row">
-                        <span class="portfolio-title" >Project Description </span> <span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-info" >{{ item.description|safe }}</span>
-                    </div>
+                       <div class="portfolio-inner-row">
+                      <span class="portfolio-title" >Project Description </span> <span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-info" >{{ item.shortDescription|safe }}
+                {% if item.description %}
+                    <p class="timeline-col-3-desc hide-timeline-desc" id="personalProject-toggle-{{ item.id }}">{{ item.description|safe }}</p>
+
+            <div class="read-more-btn" onclick="$('#personalProject-toggle-{{ item.id }}').slideToggle(200)" id="read-more">Read more</div>
+                       {% endif %}</span>
+                  </div>
                     <div class="portfolio-inner-row">
                         <span class="portfolio-title" >Project Link  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc" ><a href="{{ item.link }}">{{ item.link }}</a></span>
                     </div>                <div class="portfolio-inner-row">
@@ -354,14 +371,23 @@
 
         {% for item in recentWork %}
           <div class="portfolio-col portfolio-count-2">
-             <div class="portfolio-col-1"><div class="portfolio-project-img"><img src="{{ item.logo.url }}" alt=""></div></div>
+             <div class="portfolio-col-1" style="{% if item.backgroundImage %}
+             background-image: url('{{ item.backgroundImage.url }}');
+                 {% else %}
+             background:var(--orange)
+             {% endif %}"><div class="portfolio-project-img"><img src="{{ item.logo.url }}" alt=""></div></div>
              <div class="portfolio-col-2">
               <div class="portfolio-inner-col">
                   <div class="portfolio-inner-row">
                       <span class="portfolio-title" >Project Name  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-project-name" >{{ item.name }}</span>
                   </div>
-                  <div class="portfolio-inner-row">
-                      <span class="portfolio-title" >Project Description </span> <span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-info" >{{ item.description|safe }}</span>
+                   <div class="portfolio-inner-row">
+                      <span class="portfolio-title" >Project Description </span> <span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-info" >{{ item.shortDescription|safe }}
+             {% if item.description %}
+                <p class="timeline-col-3-desc hide-timeline-desc" id="recentProject-toggle-{{ item.id }}">{{ item.description|safe }}</p>
+
+            <div class="read-more-btn" onclick="$('#recentProject-toggle-{{ item.id }}').slideToggle(200)" id="read-more">Read more</div>
+             {% endif %} </span>
                   </div>
                   <div class="portfolio-inner-row">
                       <span class="portfolio-title" >Project Link  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc" ><a href="{{ item.link}}">{{ item.link}}</a></span>
