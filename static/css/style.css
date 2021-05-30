@@ -1748,7 +1748,8 @@ animation-fill-mode: forwards;
 }
 .about-col-2
 {
-    width: 95%;
+       width: 100%;
+    margin-top: 40px;
     text-align: center;
 }
 .about-col-1
