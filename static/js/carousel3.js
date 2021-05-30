@@ -99,10 +99,10 @@ else
   }
   else if(screen.width > 600 && screen.width <= 900)
   {
-    sliderfirstRun2([0,1,2])
+    sliderfirstRun2([0])
   }
   else
   {
-    sliderfirstRun2([0,1,2,3])
+    sliderfirstRun2([0,1])
   }
  });
