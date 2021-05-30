@@ -333,7 +333,8 @@
                   </div>
                     <div class="portfolio-inner-row">
                         <span class="portfolio-title" >Project Link  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc" ><a href="{{ item.link }}">{{ item.link }}</a></span>
-                    </div>                <div class="portfolio-inner-row">
+                    </div>
+                    <div class="portfolio-inner-row technologies-used">
                         <span class="portfolio-title" >Technologies Used  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-tech" >
 
   {% for tech in item.technologies.all %}
@@ -391,9 +392,14 @@
                   </div>
                   <div class="portfolio-inner-row">
                       <span class="portfolio-title" >Project Link  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc" ><a href="{{ item.link}}">{{ item.link}}</a></span>
-                  </div>                <div class="portfolio-inner-row">
+                  </div>
+                  <div class="portfolio-inner-row technologies-used">
                       <span class="portfolio-title" >Technologies Used  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-tech" >  {% for tech in item.technologies2.all %}
- <span>   {{ tech.techName }}</span>
+ <span> {% if item.technologies2.all.count != 0  %}
+ {{ tech.techName }}
+     {% else %}
+     Will be updated
+ {% endif %} </span>
   {% endfor %}</span>
                   </div>
                   <!-- <div class="portfolio-inner-row">
@@ -678,8 +684,8 @@
 
                 <label class="contact-form-label">Query</label>
                 <textarea type="text" class="contact-form-textarea"></textarea>
-                <button class="contact-form-btn purple-gradient">
-                    Submit
+                <button disabled class="contact-form-btn purple-gradient">
+                    Not functional
                 </button>
             
                 </div>
