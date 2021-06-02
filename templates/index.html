@@ -7,7 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="icon" href="{% static 'images/logo.svg' %}">
+    {% if profile.logo %}
+        <link rel="icon" href="{{profile.logo.url }}">
+        {% else %}
+        <link rel="icon" href="{% static 'images/logo.svg' %}">
+    {% endif %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet"> 
@@ -34,13 +38,18 @@
         <!-- navigation bar  starting -->
     <nav>
         <div class="nav-logo">
-            <img src="{% static 'images/logo.svg' %}">
+                {% if profile.logo %}
+                      <img src='{{profile.logo.url }}'>
+        {% else %}
+         <img src="{% static 'images/logo.svg' %}">
+    {% endif %}
+
             <i class="fas fa-bars hamburger-menu" onclick="$('#nav-items-section').toggleClass('mobile-view');$('#nav-items-section').toggleClass('mobile-view-animation');"></i>
         </div>
         <div class="nav-items-section mobile-view" id="nav-items-section" >
             <a href="#projectslink" class="nav-links">Projects</a>
             <a href="#aboutlink" class="nav-links">About</a>
-            <a href="https://drive.google.com/file/d/1yXbN8ZbKxmspridARmewqxfpaDiUfJmx/view?usp=sharing" target="_blank" class="nav-links">Resume</a>
+            <a href="{{ profile.resumeLink }}" target="_blank" class="nav-links">Resume</a>
             <a href="#experiencelink" class="nav-links">Experience</a>
             <a href="#skilllink" class="nav-links">Skills</a>
             <a class="nav-links" onclick="$('#contact-form').css('display','flex')">Contact</a>
@@ -51,12 +60,11 @@
 <section class="main-section">
     <div class="main-section-inner-left">
        <div class="main-section-inner-left-div">
-        <div class="main-section-heading-1">Hey! I am</div>
-        <div class="main-section-heading-2">Orendra Singh</div>
-        <div class="main-section-heading-3">Full Stack Developer</div>
-        <div class="main-section-desc">I love to develop amazing things with creativity and new ideas
-        so that they can be made perfect as per the requirements.</div>
-        <div class="main-section-cv-btn" onclick="window.open('https://drive.google.com/file/d/1yXbN8ZbKxmspridARmewqxfpaDiUfJmx/view?usp=sharing','_blank')">
+        <div class="main-section-heading-1">{{ profile.greetingTxt }}</div>
+        <div class="main-section-heading-2">{{ profile.name}}</div>
+        <div class="main-section-heading-3">{{ profile.title}}</div>
+        <div class="main-section-desc">{{ profile.shortDescription}}</div>
+        <div class="main-section-cv-btn" onclick="window.open('{{ profile.resumeLink }}','_blank')">
             DOWNLOAD CV <span><img src="{% static 'images/elements/file_download.svg' %}" ></span>
         </div>
        </div>
@@ -94,13 +102,9 @@
     <div class="chart-title purple-gradient">Key Skills</div>
     <!-- <div class="chart" id="chart1"></div> -->
     <div class="skills-set">
-        <li class="skills-name">Python, Django & Git<span class="skill-meter skill-expert"> 2+ yrs. Exp.</span></li>
-        <li class="skills-name">WordPress<span class="skill-meter skill-intermediate">1+ yrs. Exp.</span></li>
-        <li class="skills-name">HTML, CSS & JS<span class="skill-meter skill-expert">2+ yrs. Exp.</span></li>
-        <li class="skills-name">Mongo & Sql DB<span class="skill-meter skill-intermediate">Intermediate</span></li>
-        <li class="skills-name">React JS<span class="skill-meter skill-intermediate">Intermediate</span></li>
-        <li class="skills-name">PhP & Java<span class="skill-meter skill-beginner">Beginner</span></li>
-        <li class="skills-name">C and C++<span class="skill-meter skill-intermediate">Intermediate</span></li>
+       {% for item in keySkills %}
+        <li class="skills-name">{{ item.skillname }}<span class="skill-meter skill-{{ item.skillLevel }}"> {{ item.skillExperience}}</span></li>
+       {% endfor %}
 <!-- 
         <li class="skills-name">Python<span class="skill-meter skill-beginner">Beginner</span></li>
         <li class="skills-name">Python<span class="skill-meter skill-expert">Expert</span></li> -->
@@ -114,13 +118,9 @@
 
     <!-- <div class="chart" id="chart2"></div> -->
     <div class="skills-set">
-        <li class="skills-name">Magento<span class="skill-meter skill-beginner"> Beginner </span></li>
-        <li class="skills-name">Drupal<span class="skill-meter skill-beginner">Beginner</span></li>
-        <li class="skills-name">Hosting <span class="skill-meter skill-intermediate">Intermediate</span></li>
-        <li class="skills-name">SEO<span class="skill-meter skill-intermediate">1+ yrs. Exp.</span></li>
-        <li class="skills-name">Web Scraping<span class="skill-meter skill-intermediate">Intermediate</span></li>
-        <li class="skills-name">Team Work<span class="skill-meter skill-expert">Expert</span></li>
-        <li class="skills-name">Linux<span class="skill-meter skill-intermediate">Intermediate</span></li>
+        {% for item in extraSkills %}
+        <li class="skills-name">{{ item.skillname }}<span class="skill-meter skill-{{ item.skillLevel }}"> {{ item.skillExperience}}</span></li>
+       {% endfor %}
     </div>
 </div>
 <div class="skills-section-col">
@@ -130,12 +130,9 @@
 
     <!-- <div class="chart" id="chart3"></div> -->
     <div class="skills-set">
-        <li class="skills-name">Figma<span class="skill-meter skill-intermediate">Intermediate</span></li>
-        <li class="skills-name">Adobe XD<span class="skill-meter skill-intermediate">Intermediate</span></li>
-        <li class="skills-name">Photoshop<span class="skill-meter skill-intermediate">Intermediate</span></li>
-        <li class="skills-name">Illustrator<span class="skill-meter skill-beginner">Beginner</span></li>
-        <li class="skills-name">Filmora<span class="skill-meter skill-intermediate">Intermediate</span></li>
-        <li class="skills-name">Adobe Premier<span class="skill-meter skill-beginner">Beginner</span></li>
+        {% for item in degSkills %}
+        <li class="skills-name">{{ item.skillname }}<span class="skill-meter skill-{{ item.skillLevel }}"> {{ item.skillExperience}}</span></li>
+       {% endfor %}
 
     </div>
 </div>
@@ -526,7 +523,7 @@
     <div class="spacing-5"></div>
 </section>
 
-{% if testimonial.enabled %}
+{% if sections.testimonial %}
   <!-- section breaker starts -->
   <div class="spacing-4"></div>
   <!-- <div class="section-breaker">
@@ -541,86 +538,37 @@
            <!-- starting of styled heading -->
      <div class="styled-heading">
         <div class="styled-heading-upper">
-        <div class="styled-hypen"></div><span>2 + Testimonials</span>
+        <div class="styled-hypen"></div><span>2 + Endorsement</span>
         </div>
         <div class="styled-heading-down">
-            Testimonials
+            Endorsement
         </div>
     </div>
 
     <!-- endingof styled heading -->
     <div class="spacing-7"></div>
     <div class="testimonials-section" id="testimonials-section">
-        <div class="testimonial-col">
+     {% for item in endorsment %}
+      <div class="testimonial-col">
             <div class="testimonial-row-1">
                 <div class="testimonial-row-1-1">
-                    <img src="./images/logo.svg" alt="profile-image">
+                   {% if item.logo %}
+                    <img src="{{ item.logo.url }}" alt="profile-image">
+                       {% else %}
+                        <img src="./images/elements/avtar.jpg" alt="profile-image">
+                   {% endif %}
                 </div>
                 <div class="testimonial-row-1-2">
-                    <p>harend Singh</p>
-                    <p>From Precisely</p>
+                    <p>{{ item.name}}</p>
+                    <p>{{ item.subHeading}}</p>
                 </div>
             </div>
             <div class="testimonial-row-2">
-                <div class="testimonial-row-2-desc">This is testimonial description this is information about the person or the lovely comment from that person.</div>
+                <div class="testimonial-row-2-desc">{{ item.comment }}</div>
             </div>
         </div>
-        <div class="testimonial-col">
-            <div class="testimonial-row-1">
-                <div class="testimonial-row-1-1">
-                    <img src="./images/logo.svg" alt="profile-image">
-                </div>
-                <div class="testimonial-row-1-2">
-                    <p>aish Singh</p>
-                    <p>From Precisely</p>
-                </div>
-            </div>
-            <div class="testimonial-row-2">
-                <div class="testimonial-row-2-desc">This is testimonial description this is information about the person or the lovely comment from that person.</div>
-            </div>
-        </div>
-        <div class="testimonial-col">
-            <div class="testimonial-row-1">
-                <div class="testimonial-row-1-1">
-                    <img src="./images/logo.svg" alt="profile-image">
-                </div>
-                <div class="testimonial-row-1-2">
-                    <p>raju Singh</p>
-                    <p>From Precisely</p>
-                </div>
-            </div>
-            <div class="testimonial-row-2">
-                <div class="testimonial-row-2-desc">This is testimonial description this is information about the person or the lovely comment from that person.</div>
-            </div>
-        </div>
-        <div class="testimonial-col">
-            <div class="testimonial-row-1">
-                <div class="testimonial-row-1-1">
-                    <img src="./images/logo.svg" alt="profile-image">
-                </div>
-                <div class="testimonial-row-1-2">
-                    <p>nikhil Singh</p>
-                    <p>From Precisely</p>
-                </div>
-            </div>
-            <div class="testimonial-row-2">
-                <div class="testimonial-row-2-desc">This is testimonial description this is information about the person or the lovely comment from that person.</div>
-            </div>
-        </div>
-        <div class="testimonial-col">
-            <div class="testimonial-row-1">
-                <div class="testimonial-row-1-1">
-                    <img src="./images/logo.svg" alt="profile-image">
-                </div>
-                <div class="testimonial-row-1-2">
-                    <p>Orendra Singh</p>
-                    <p>From Precisely</p>
-                </div>
-            </div>
-            <div class="testimonial-row-2">
-                <div class="testimonial-row-2-desc">This is testimonial description this is information about the person or the lovely comment from that person.</div>
-            </div>
-        </div>
+     {% endfor %}
+
 
     </div>
     <div class="portfolio-control-btn">
@@ -658,8 +606,8 @@
                 <!-- <img src="./images/elements/three_colors.svg" alt="Profile image">  -->
             <div class="about-profile-img" style="background-image: url('{{ about.logo.url }}');" ></div></div>
             <div class="about-col-2"><p>{{ about.about|safe }}</p>
-            <p>Email - id : <a href="mailto:orendrasing@gmail.com">orendrasingh@gmail.com</a>, <a href="mailto:contact@orendra.com">contact@orendra.com</a></p>
-            <p>Phone No. : <a href="tel:7503408348">7503408348</a></p>
+            <p>Email - id : <a href="mailto:{{ about.email }}">{{ about.email }}</a></p>
+{#            <p>Phone No. : <a href="tel:7503408348">7503408348</a></p>#}
 {#            <p>Telegram : orendrasingh </p>#}
             <div class="contact-heading"><div class="contact-heading-txt purple-gradient" onclick="$('#contact-form').css('display','flex')">Contact Me <i class="fas fa-envelope"></i></div></div>
 
@@ -701,7 +649,7 @@
 
 <section class="social">
     <div class="social-icons">
-        <a class="social-icon-items" target="_blank" href="https://www.facebook.com/orendra.singh/"><img src="{% static '/images/social_icon/fb.svg' %}" alt="fb icon"></a>
+        <a class="social-icon-items" target="_blank" href="https://www.youtube.com/channel/UCSVdFntyuxYGhVB9k4ISl_g"><img src="{% static '/images/social_icon/youtube.svg' %}" alt="yt icon"></a>
         <a class="social-icon-items" target="_blank" href="http://instagram.com/orendrasingh"><img src="{% static '/images/social_icon/insta.svg' %}" alt="insta icon"></a>
         <a class="social-icon-items" target="_blank" href="https://github.com/orendrasingh"><img src="{% static '/images/social_icon/github.svg' %}" alt="github icon"></a>
         <a class="social-icon-items" target="_blank" href="https://www.linkedin.com/in/orendra-singh-b94bb0136/"><img src="{% static '/images/social_icon/linkedin.svg' %}" alt="linkedin icon"></a>

@@ -1417,10 +1417,11 @@ margin: auto;
 }
 .social-icon-items
 {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     margin-left: 8px;
     margin-right: 8px;
+    display: flex;
 }
 .social-icon-items img
 {max-width: 100%;}
