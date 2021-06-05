@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import env
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,13 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-jy01*-)7=(moz9(y=g25s8+@_^q#j%xytvyvvm3xefk+8_z6c7'
+SECRET_KEY =env.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.DEBUG
 
-ALLOWED_HOSTS = ["*"]
-
+ALLOWED_HOSTS = env.ALLOWED_HOST
 
 # Application definition
 
@@ -86,13 +87,14 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
 'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'portfolio',
-        'USER': 'orendrasingh',
-        'PASSWORD': 'Oggy@750',
-        'HOST': '152.70.70.69',
-        'PORT': '5432',
+        'NAME': env.DATABASE_NAME,
+        'USER': env.DATABASE_USER,
+        'PASSWORD': env.DATABASE_PASS,
+        'HOST': env.DATABASE_HOST,
+        'PORT':env.DATABASE_PORT,
     }
 }
+
 
 
 # Password validation
@@ -128,25 +130,18 @@ USE_L10N = True
 USE_TZ = True
 
 
+SESSION_COOKIE_SECURE=env.SESSION_COOKIE_SECURE
+SECURE_SSL_REDIRECT=env.SECURE_SSL_REDIRECT
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 
-#STATIC_URL = '/static/'
-#STATIC_ROOT = "home/ubuntu/portfolioDjango/static/"
-
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
 
-# Add these new lines
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-#STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, "static"),
-#]
+]
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
