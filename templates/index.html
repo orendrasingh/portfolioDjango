@@ -8,20 +8,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <!--  Essential META Tags -->
 <title>{{ meta.title }}</title>
-<meta property="og:title" content="{{ meta.title }}">
+<meta name="description" content="{{ meta.description}}">
+<meta name="keywords" content="creative, works, showcase, portfolio, highlight, projects, modern, agency, digital, studio, css, animation, transition, freelancers">
+
+<!-- SOCIAL MEDIA META -->
 <meta property="og:description" content="{{ meta.description}}">
 <meta property="og:image" content="{% if meta.img %}
 https://{{ host_name }}{{ meta.img.url }}
 {% endif %} ">
-<meta property="og:url" content="{{ meta.url}}">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:site_name" content="{{ meta.title }}">
+<meta property="og:title" content="{{ meta.title }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://orendra.com/">
 
-<!--  Non-Essential, But Recommended -->
-
-<meta property="og:site_name" content="European Travel, Inc.">
-<meta name="twitter:image:alt" content="Alt text for image">
+<!-- TWITTER META -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="{{ meta.title }}">
+<meta name="twitter:creator" content="@orendrasingh">
+<meta name="twitter:title" content="{{ meta.title }}">
+<meta name="twitter:description" content="{{ meta.description}}">
+<meta name="twitter:image" content="{% if meta.img %}
+https://{{ host_name }}{{ meta.img.url }}
+{% endif %} ">
 
     {% if profile.logo %}
         <link rel="icon" href="{{profile.logo.url }}">
