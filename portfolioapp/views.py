@@ -23,7 +23,7 @@ def index(request):
     companies=companiesWorkedFor.objects.all()
     meta=meta_info.objects.all()[0]
     sections=sectionEnableDisable.objects.all()[0]
-    return render(request,'index.html',{"popup":popup,"sections":sections,"meta":meta,"certificates":certificates,"comapnies":companies,"endorsment":endors,"profile":profile,"extraSkills":extraSkills,"keySkills":keySkills,"degSkills":degSkills,"experience":experience,"education":education,"recentWork":recntWork,"personalProject":pProjects,"about":abo})
+    return render(request,'index.html',{"popup":popup,"host_name": request.get_host(),"sections":sections,"meta":meta,"certificates":certificates,"comapnies":companies,"endorsment":endors,"profile":profile,"extraSkills":extraSkills,"keySkills":keySkills,"degSkills":degSkills,"experience":experience,"education":education,"recentWork":recntWork,"personalProject":pProjects,"about":abo})
 
 def contact(request):
 
