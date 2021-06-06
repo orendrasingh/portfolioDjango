@@ -6,7 +6,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+
+
+    <!--  Essential META Tags -->
+<meta property="og:title" content="{{ meta.title }}">
+<meta property="og:description" content="{{ meta.description}}">
+<meta property="og:image" content="{% if meta.img %}
+{{ meta.img.url }}
+{% endif %} ">
+<meta property="og:url" content="{{ meta.url}}">
+<meta name="twitter:card" content="summary_large_image">
+
+<!--  Non-Essential, But Recommended -->
+
+<meta property="og:site_name" content="European Travel, Inc.">
+<meta name="twitter:image:alt" content="Alt text for image">
+
     {% if profile.logo %}
         <link rel="icon" href="{{profile.logo.url }}">
         {% else %}

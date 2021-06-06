@@ -2,8 +2,7 @@ from django.shortcuts import render
 from .models import *
 # Create your views here.
 def index(request):
-    popup=notification.objects.get(id=1)
-    testimoni=testimonial.objects.get(id=1)
+    popup=notification.objects.all()[0]
     extraSkills=ExtraSkills.objects.all().order_by("priority")
     keySkills=KeySkills.objects.all().order_by("priority")
     degSkills=DegSkills.objects.all().order_by("priority")
@@ -16,5 +15,6 @@ def index(request):
     endors=endorsement.objects.all()
     certificates=certification.objects.all()
     companies=companiesWorkedFor.objects.all()
+    meta=meta_info.objects.all()[0]
     sections=sectionEnableDisable.objects.all()[0]
-    return render(request,'index.html',{"popup":popup,"sections":sections,"certificates":certificates,"comapnies":companies,"endorsment":endors,"profile":profile,"extraSkills":extraSkills,"keySkills":keySkills,"degSkills":degSkills,"experience":experience,"education":education,"recentWork":recntWork,"personalProject":pProjects,"testimonial":testimoni,"about":abo})
+    return render(request,'index.html',{"popup":popup,"sections":sections,"meta":meta,"certificates":certificates,"comapnies":companies,"endorsment":endors,"profile":profile,"extraSkills":extraSkills,"keySkills":keySkills,"degSkills":degSkills,"experience":experience,"education":education,"recentWork":recntWork,"personalProject":pProjects,"about":abo})
