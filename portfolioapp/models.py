@@ -211,9 +211,6 @@ class notification(models.Model):
     msg=models.TextField(null=True)
     btn=models.TextField(null=True)
 
-class testimonial(models.Model):
-    enabled=models.BooleanField(default=False)
-
 class about(models.Model):
     about=RichTextField()
     logo=models.FileField(upload_to=photo_path,null=True)
@@ -296,3 +293,13 @@ def priority_update(sender,instance,created, **kwargs):
     if created:
         instance.priority=instance.id
         instance.save()
+
+class meta_info(models.Model):
+    title=models.CharField(max_length=100)
+    description=models.TextField(null=True)
+    tags=models.TextField()
+    img = models.FileField(upload_to=photo_path, null=True)
+    url=models.URLField()
+
+    def __str__(self):
+        return self.title
