@@ -138,6 +138,13 @@ SECURE_BROWSER_XSS_FILTER = env.SECURE_BROWSER_XSS_FILTER
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+#SMTP setting for mails
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = env.EMAIL_HOST
+EMAIL_USE_TLS = True
+EMAIL_PORT = env.EMAIL_PORT
+EMAIL_HOST_USER = env.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = env.EMAIL_HOST_PASSWORD
 
 STATIC_URL = '/static/'
 

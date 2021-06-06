@@ -9,6 +9,7 @@
 
 
     <!--  Essential META Tags -->
+<title>{{ meta.title }}</title>
 <meta property="og:title" content="{{ meta.title }}">
 <meta property="og:description" content="{{ meta.description}}">
 <meta property="og:image" content="{% if meta.img %}
@@ -639,19 +640,22 @@
             <div class="contact-form-col-1" style="background-image: url({% static '/images/contact3.jpg' %});"></div>
             <div class="contact-form-col-2">
                 <div class="close-contact-form" onclick="$('#contact-form').css('display','none')">X</div>
-                <div class="contact-form-fields">
+
+                <form class="contact-form-fields" id="contact-form-id">
+                    {% csrf_token %}
+                           <div id="submission-msg-2"></div>
                 <label  class="contact-form-label">Name</label>
-                <input type="text" placeholder="Enter your name" class="contact-form-input">
+                <input type="text" name="name" placeholder="Enter your name" class="contact-form-input">
                 <label class="contact-form-label">Email id</label>
-                <input type="email" placeholder="Enter your mail id" class="contact-form-input">
+                <input type="email" name="email" placeholder="Enter your mail id" class="contact-form-input">
 
                 <label class="contact-form-label">Query</label>
-                <textarea type="text" class="contact-form-textarea"></textarea>
-                <button disabled class="contact-form-btn purple-gradient">
-                    Not functional
+                <textarea type="text" name="msg" class="contact-form-textarea"></textarea>
+                <button class="contact-form-btn purple-gradient">
+                    Submit
                 </button>
             
-                </div>
+                </form>
         </div>
         </div>
     </div>

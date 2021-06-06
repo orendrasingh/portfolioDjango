@@ -20,4 +20,5 @@ from django.conf import settings
 from portfolioapp import views
 urlpatterns = [
     path('', views.index,name="index"),
+    path('contact/', views.contact,name="contact"),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

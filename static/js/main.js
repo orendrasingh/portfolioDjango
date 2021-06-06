@@ -205,3 +205,33 @@ $(document).on("click", "#read-more", function () {
       $(this).text("Read more")
   }
 })
+
+//form submission
+var myvariable=""
+//API call for sending mail of  report shutdown
+$("#contact-form-id").submit(function (e) {
+    // preventing from page reload and default actions
+    e.preventDefault();
+    // $("#report-shutdown-submit").text("Submitting")
+    $.ajax({
+        type: 'POST',
+        url: "/contact/",
+        data: $("#contact-form-id").serialize(),
+        success: function (response) {
+            $('#submission-msg-2').text("Thanks Your response submitted successfully")
+            $('#submission-msg-2').css("background","white")
+            $('#submission-msg-2').css("z-index","90")
+
+            // $("#contact-form-id").slideUp(500)
+            myvariable = response
+        },
+        error: function (response) {
+            // $("#contact-form-id").slideUp(500)
+            $('#submission-msg-2').text("Something went wrong kindly mail us at : contact@orendra.com")
+            $('#submission-msg-2').css("background","white")
+            $('#submission-msg-2').css("z-index","90")
+
+
+        }
+    })
+})
