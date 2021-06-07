@@ -647,6 +647,8 @@ padding-bottom: 15px;
     position: relative;
     z-index: -2;
     border-radius: 10px;
+    background-size: cover;
+
 
 }
 .portfolio-col-1::after
@@ -681,6 +683,7 @@ transition: 0.5s;
     transform: rotate(90deg);
    position: relative;
    z-index: 3;
+
 }
 
 .portfolio-project-img img:hover
@@ -688,6 +691,11 @@ transition: 0.5s;
     transform: rotate(90deg) translateX(10px);
     transition: ease-in-out 0.5s;
 
+}
+.portfolio-project-img
+{
+        display: flex;
+    justify-content: center;
 }
 
 /* .portfolio-col:hover::after
