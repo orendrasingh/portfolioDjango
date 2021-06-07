@@ -351,7 +351,7 @@ https://{{ host_name }}{{ meta.img.url }}
                        <div class="portfolio-inner-row">
                       <span class="portfolio-title" >Project Description </span> <span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-info" >{{ item.shortDescription|safe }}
                 {% if item.description %}
-                    <p class="timeline-col-3-desc hide-timeline-desc" id="personalProject-toggle-{{ item.id }}">{{ item.description|safe }}</p>
+                    <p class="hide-timeline-desc" id="personalProject-toggle-{{ item.id }}">{{ item.description|safe }}</p>
 
             <div class="read-more-btn" onclick="$('#personalProject-toggle-{{ item.id }}').slideToggle(200)" id="read-more">Read more</div>
                        {% endif %}</span>
@@ -410,7 +410,7 @@ https://{{ host_name }}{{ meta.img.url }}
                    <div class="portfolio-inner-row">
                       <span class="portfolio-title" >Project Description </span> <span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-info" >{{ item.shortDescription|safe }}
              {% if item.description %}
-                <p class="timeline-col-3-desc hide-timeline-desc" id="recentProject-toggle-{{ item.id }}">{{ item.description|safe }}</p>
+                <p class="hide-timeline-desc" id="recentProject-toggle-{{ item.id }}">{{ item.description|safe }}</p>
 
             <div class="read-more-btn" onclick="$('#recentProject-toggle-{{ item.id }}').slideToggle(200)" id="read-more">Read more</div>
              {% endif %} </span>
