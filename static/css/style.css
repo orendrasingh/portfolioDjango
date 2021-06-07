@@ -544,6 +544,10 @@ padding-bottom: 15px;
 {
         display: none;
 }
+.hide-timeline-desc ul
+{
+    margin-left: 22px;
+}
 .read-more-btn
 {
     cursor: pointer;
