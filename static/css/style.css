@@ -1057,6 +1057,13 @@ width: 80%;
 {
     max-width: 84%;
     max-height: 84%;
+<<<<<<< HEAD
+=======
+    height: 53px;
+    width: 55px;
+    border-radius: 50%;
+
+>>>>>>> 81015634b8e36a993e3ca7cd80617fe763251824
 }
 .testimonial-row-2
 {

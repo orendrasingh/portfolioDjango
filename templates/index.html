@@ -268,6 +268,7 @@ https://{{ host_name }}{{ meta.img.url }}
   <div class="spacing-5"></div>
 </section>
 
+<<<<<<< HEAD
   <!-- section breaker starts -->
   <!-- <div class="spacing-4"></div> -->
   <!-- <div class="section-breaker">
@@ -316,6 +317,10 @@ https://{{ host_name }}{{ meta.img.url }}
     </div>
 </div> -->
 <!-- end earlier waala col -->
+=======
+  <div class="spacing-4"></div>
+
+>>>>>>> 81015634b8e36a993e3ca7cd80617fe763251824
 
   <section class="portfolio" id="projectslink">
 
@@ -362,7 +367,11 @@ https://{{ host_name }}{{ meta.img.url }}
                     <div class="portfolio-inner-row technologies-used">
                         <span class="portfolio-title" >Technologies Used  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-tech" >
 
+<<<<<<< HEAD
   {% for tech in item.technologies.all %}
+=======
+  {% for tech in item.technologies_pp.all %}
+>>>>>>> 81015634b8e36a993e3ca7cd80617fe763251824
  <span>   {{ tech.techName }}</span>
   {% endfor %}</span>
                     </div>
@@ -420,7 +429,11 @@ https://{{ host_name }}{{ meta.img.url }}
                   </div>
                   <div class="portfolio-inner-row technologies-used">
                       <span class="portfolio-title" >Technologies Used  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-tech" >  {% for tech in item.technologies2.all %}
+<<<<<<< HEAD
  <span> {% if item.technologies2.all.count != 0  %}
+=======
+ <span> {% if item.technologies_rw.all.count != 0  %}
+>>>>>>> 81015634b8e36a993e3ca7cd80617fe763251824
  {{ tech.techName }}
      {% else %}
      Will be updated
@@ -494,6 +507,7 @@ https://{{ host_name }}{{ meta.img.url }}
 <div class="spacing-7"></div>
   <!-- starting certificates section -->
   <div class="certification-row">
+<<<<<<< HEAD
       <div class="certi-cols">
           <img src="{% static '/images/certs/webtek.png' %}" onclick="window.open('https://drive.google.com/file/d/1a8LClT66wot-Dv9ExK57U6X3oEEb6ohY/view?usp=sharing','_blank')" alt="Web tek certificate">
       </div>
@@ -507,6 +521,16 @@ https://{{ host_name }}{{ meta.img.url }}
       <img src="{% static '/images/certs/vmware_Kn_ITA_CVC.png' %}">
       </div>
 
+=======
+    {% for item in certificates %}
+      <div class="certi-cols">
+          <img src="{{ item.logo.url }}" onclick="window.open('{{ item.url }}','_blank')" alt="{{ item.name }}">
+      </div>
+
+    {% endfor %}
+
+
+>>>>>>> 81015634b8e36a993e3ca7cd80617fe763251824
   </div>
   <div class="spacing-5"></div>
 </section>
@@ -515,11 +539,15 @@ https://{{ host_name }}{{ meta.img.url }}
 
    <!-- section breaker starts -->
    <div class="spacing-4"></div>
+<<<<<<< HEAD
    <!-- <div class="section-breaker">
        <img src="./images/elements/wave.svg" alt="section breaker">
    </div>
    <div class="spacing-7"></div> -->
    <!-- section breaker ends -->
+=======
+
+>>>>>>> 81015634b8e36a993e3ca7cd80617fe763251824
 <section class="companies">
      <!-- starting of styled heading -->
      <div class="styled-heading">
@@ -532,6 +560,7 @@ https://{{ host_name }}{{ meta.img.url }}
     </div>
     <div class="spacing-5"></div>
     <div class="companies-row">
+<<<<<<< HEAD
         <div class="company-cols" onclick="window.open('https://sflc.in','_blank')">
             <img src="{% static '/images/company/sflc.svg' %}"  alt="Sflc.in">
         </div>
@@ -547,6 +576,15 @@ https://{{ host_name }}{{ meta.img.url }}
         <div class="company-cols" onclick="window.open('https://mmrboutique.in/','_blank');">
             <img src="{% static '/images/company/mmr.png' %}" style="filter: invert();width: 60%;" alt="MMR Boutique">
             </div>
+=======
+     {% for item in comapnies %}
+        <div class="company-cols" onclick="window.open('{{ item.url }}','_blank')">
+            <img src='{{item.logo.url }}'  alt="{{ item.name }}">
+        </div>
+     {% endfor %}
+
+
+>>>>>>> 81015634b8e36a993e3ca7cd80617fe763251824
     </div>
     <div class="spacing-5"></div>
 </section>
@@ -580,10 +618,17 @@ https://{{ host_name }}{{ meta.img.url }}
       <div class="testimonial-col">
             <div class="testimonial-row-1">
                 <div class="testimonial-row-1-1">
+<<<<<<< HEAD
                    {% if item.logo %}
                     <img src="{{ item.logo.url }}" alt="profile-image">
                        {% else %}
                         <img src="./images/elements/avtar.jpg" alt="profile-image">
+=======
+                   {% if item.image %}
+                    <img src="{{ item.image.url }}" alt="profile-image">
+                       {% else %}
+                        <img src="{% static '/images/elements/avtar.jpg' %}" alt="profile-image">
+>>>>>>> 81015634b8e36a993e3ca7cd80617fe763251824
                    {% endif %}
                 </div>
                 <div class="testimonial-row-1-2">
@@ -607,6 +652,7 @@ https://{{ host_name }}{{ meta.img.url }}
   </section>
 {% endif %}
 
+<<<<<<< HEAD
     <!-- section breaker starts -->
     <div class="spacing-4"></div>
     <!-- <div class="section-breaker">
@@ -615,6 +661,10 @@ https://{{ host_name }}{{ meta.img.url }}
     <div class="spacing-7"></div> -->
     <!-- section breaker ends -->
   
+=======
+    <div class="spacing-4"></div>
+
+>>>>>>> 81015634b8e36a993e3ca7cd80617fe763251824
     <!-- about me section -->
     <section class="about-me" id="aboutlink">
             <!-- starting of styled heading -->
