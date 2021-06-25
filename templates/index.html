@@ -268,54 +268,8 @@ https://{{ host_name }}{{ meta.img.url }}
   <div class="spacing-5"></div>
 </section>
 
-  <!-- section breaker starts -->
-  <!-- <div class="spacing-4"></div> -->
-  <!-- <div class="section-breaker">
-      <img src="./images/elements/wave.svg" alt="section breaker">
-  </div>
-  <div class="spacing-7"></div> -->
-  <!-- section breaker ends -->
-
-  
-  <!-- section breaker starts -->
   <div class="spacing-4"></div>
-  <!-- <div class="section-breaker">
-      <img src="./images/elements/wave.svg" alt="section breaker">
-  </div>
-  <div class="spacing-7"></div> -->
-  <!-- section breaker ends -->
 
-<!-- <section class="projects-portfolio">
-    <div class="styled-heading">
-        <div class="styled-heading-upper">
-        <div class="styled-hypen"></div><span>10 + Projects</span>
-        </div>
-        <div class="styled-heading-down">
-            Project Gallery
-        </div>
-    </div>
-    <div class="spacing-3"></div>
-    <div class="project-portfolio-type">Personal Projects</div>
-    <div class="project-portfolio-row">
-<div class="project-portfolio-col-1"></div>
-<div class="project-portfolio-col-1"></div>
-    </div>
-    <div class="project-portfolio-row">
-        <div class="project-portfolio-col-1"></div>
-        <div class="project-portfolio-col-1"></div>
-            </div>
-</section> -->
-
-
-<!-- earlier waala portfolio col -->
-<!-- <div class="portfolio-col" id="portfolio-col" style="background-image: url('./images/projects/ist.svg');">
-    <div class="portfolio-abs-content" id="portfolio-abs-content">
-        <div class="portfolio-read-btn purple-gradient" onclick="$('#portfolio-popup-1').css('display','flex')">
-            Read More
-        </div>
-    </div>
-</div> -->
-<!-- end earlier waala col -->
 
   <section class="portfolio" id="projectslink">
 
@@ -362,7 +316,7 @@ https://{{ host_name }}{{ meta.img.url }}
                     <div class="portfolio-inner-row technologies-used">
                         <span class="portfolio-title" >Technologies Used  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-tech" >
 
-  {% for tech in item.technologies.all %}
+  {% for tech in item.technologies_pp.all %}
  <span>   {{ tech.techName }}</span>
   {% endfor %}</span>
                     </div>
@@ -420,7 +374,7 @@ https://{{ host_name }}{{ meta.img.url }}
                   </div>
                   <div class="portfolio-inner-row technologies-used">
                       <span class="portfolio-title" >Technologies Used  </span><span class="portfolio-colon" > : </span><span class="portfolio-desc portfolio-tech" >  {% for tech in item.technologies2.all %}
- <span> {% if item.technologies2.all.count != 0  %}
+ <span> {% if item.technologies_rw.all.count != 0  %}
  {{ tech.techName }}
      {% else %}
      Will be updated
@@ -494,18 +448,13 @@ https://{{ host_name }}{{ meta.img.url }}
 <div class="spacing-7"></div>
   <!-- starting certificates section -->
   <div class="certification-row">
+    {% for item in certificates %}
       <div class="certi-cols">
-          <img src="{% static '/images/certs/webtek.png' %}" onclick="window.open('https://drive.google.com/file/d/1a8LClT66wot-Dv9ExK57U6X3oEEb6ohY/view?usp=sharing','_blank')" alt="Web tek certificate">
+          <img src="{{ item.logo.url }}" onclick="window.open('{{ item.url }}','_blank')" alt="{{ item.name }}">
       </div>
-      <div class="certi-cols" onclick="window.open('https://drive.google.com/file/d/1IF1Pda1GXhSOnfXK66RSEux4wOAcs4pH/view','_blank')">
-          <img src="{% static '/images/certs/mons.png' %}" alt="Template Monster certificate">
-      </div>
-      <div class="certi-cols" onclick="window.open('https://drive.google.com/file/d/16LoCfo6PzlSCUw7CUAH_jmAnLolRAV7r/view?usp=sharing','_blank')">
-          <img src="{% static '/images/certs/FEA.jpg' %}"  alt="Fea Certificate">
-      </div>
-      <div class="certi-cols" onclick="window.open('https://www.credly.com/badges/4c4a44c2-6a67-4675-9e8d-22ed3584a2ad','_blank');">
-      <img src="{% static '/images/certs/vmware_Kn_ITA_CVC.png' %}">
-      </div>
+
+    {% endfor %}
+
 
   </div>
   <div class="spacing-5"></div>
@@ -515,11 +464,7 @@ https://{{ host_name }}{{ meta.img.url }}
 
    <!-- section breaker starts -->
    <div class="spacing-4"></div>
-   <!-- <div class="section-breaker">
-       <img src="./images/elements/wave.svg" alt="section breaker">
-   </div>
-   <div class="spacing-7"></div> -->
-   <!-- section breaker ends -->
+
 <section class="companies">
      <!-- starting of styled heading -->
      <div class="styled-heading">
@@ -532,21 +477,13 @@ https://{{ host_name }}{{ meta.img.url }}
     </div>
     <div class="spacing-5"></div>
     <div class="companies-row">
-        <div class="company-cols" onclick="window.open('https://sflc.in','_blank')">
-            <img src="{% static '/images/company/sflc.svg' %}"  alt="Sflc.in">
+     {% for item in comapnies %}
+        <div class="company-cols" onclick="window.open('{{ item.url }}','_blank')">
+            <img src='{{item.logo.url }}'  alt="{{ item.name }}">
         </div>
-        <div class="company-cols" onclick="window.open('https://precisely.co.in','_blank')">
-            <img src="{% static '/images/company/precisely.svg' %}" alt="Precisely.in">
-        </div>
-        <div class="company-cols" onclick="window.open('https://lazyengineer.herokuapp.com','_blank')">
-            <img src="{% static '/images/company/le.svg' %}"  alt="Lazynegineer">
-        </div>
-        <div class="company-cols" onclick="window.open('https://maslow.precisely.one/','_blank');">
-        <img src="{% static '/images/company/maslow.svg' %}" alt="maslow">
-        </div>
-        <div class="company-cols" onclick="window.open('https://mmrboutique.in/','_blank');">
-            <img src="{% static '/images/company/mmr.png' %}" style="filter: invert();width: 60%;" alt="MMR Boutique">
-            </div>
+     {% endfor %}
+
+
     </div>
     <div class="spacing-5"></div>
 </section>
@@ -580,10 +517,10 @@ https://{{ host_name }}{{ meta.img.url }}
       <div class="testimonial-col">
             <div class="testimonial-row-1">
                 <div class="testimonial-row-1-1">
-                   {% if item.logo %}
-                    <img src="{{ item.logo.url }}" alt="profile-image">
+                   {% if item.image %}
+                    <img src="{{ item.image.url }}" alt="profile-image">
                        {% else %}
-                        <img src="./images/elements/avtar.jpg" alt="profile-image">
+                        <img src="{% static '/images/elements/avtar.jpg' %}" alt="profile-image">
                    {% endif %}
                 </div>
                 <div class="testimonial-row-1-2">
@@ -607,14 +544,8 @@ https://{{ host_name }}{{ meta.img.url }}
   </section>
 {% endif %}
 
-    <!-- section breaker starts -->
     <div class="spacing-4"></div>
-    <!-- <div class="section-breaker">
-        <img src="./images/elements/wave.svg" alt="section breaker">
-    </div>
-    <div class="spacing-7"></div> -->
-    <!-- section breaker ends -->
-  
+
     <!-- about me section -->
     <section class="about-me" id="aboutlink">
             <!-- starting of styled heading -->
