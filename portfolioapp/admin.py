@@ -2,8 +2,13 @@ from django.contrib import admin
 from .models import *
 # Register your models here.
 
+<<<<<<< HEAD
+admin.site.register(Technology)
+admin.site.register(Technology2)
+=======
 admin.site.register(technologyPersonalProject)
 admin.site.register(technologyRecentWork)
+>>>>>>> 81015634b8e36a993e3ca7cd80617fe763251824
 admin.site.register(personalProjects)
 admin.site.register(Education)
 admin.site.register(Experience)

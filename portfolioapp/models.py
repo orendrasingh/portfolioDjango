@@ -171,8 +171,13 @@ def priority_update(sender,instance,created, **kwargs):
         instance.priority=instance.id
         instance.save()
 
+<<<<<<< HEAD
+class Technology(models.Model):
+    name = models.ForeignKey(personalProjects,related_name='technologies', on_delete=models.CASCADE)
+=======
 class technologyPersonalProject(models.Model):
     name = models.ForeignKey(personalProjects,related_name='technologies_pp', on_delete=models.CASCADE)
+>>>>>>> 81015634b8e36a993e3ca7cd80617fe763251824
     techName=models.CharField(choices=Technologies,blank=True,max_length=100)
     def __str__(self):
         return self.name.name
@@ -199,8 +204,13 @@ def priority_update(sender,instance,created, **kwargs):
         instance.save()
 
 
+<<<<<<< HEAD
+class Technology2(models.Model):
+    name = models.ForeignKey(recentWork,related_name='technologies2', on_delete=models.CASCADE)
+=======
 class technologyRecentWork(models.Model):
     name = models.ForeignKey(recentWork,related_name='technologies_rw', on_delete=models.CASCADE)
+>>>>>>> 81015634b8e36a993e3ca7cd80617fe763251824
     techName = models.CharField(choices=Technologies, blank=True, max_length=100)
 
     def __str__(self):
